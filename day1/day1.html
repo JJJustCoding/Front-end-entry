@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <style>
+/*--------------------------------------------------------------------------------------------- * Copyright (c) Microsoft Corporation. All rights reserved. * Licensed under the MIT License. See License.txt in the project root for license information. *--------------------------------------------------------------------------------------------*/ body { font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback"; font-size: 14px; padding: 0 12px; line-height: 22px; word-wrap: break-word; } body.scrollBeyondLastLine { margin-bottom: calc(100vh - 22px); } body.showEditorSelection .code-line { position: relative; } body.showEditorSelection .code-active-line:before, body.showEditorSelection .code-line:hover:before { content: ""; display: block; position: absolute; top: 0; left: -12px; height: 100%; } body.showEditorSelection li.code-active-line:before, body.showEditorSelection li.code-line:hover:before { left: -30px; } .vscode-light.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(0, 0, 0, 0.15); } .vscode-light.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(0, 0, 0, 0.40); } .vscode-dark.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 255, 255, 0.4); } .vscode-dark.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 255, 255, 0.60); } .vscode-high-contrast.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 160, 0, 0.7); } .vscode-high-contrast.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 160, 0, 1); } img { max-width: 100%; max-height: 100%; } a { color: #4080D0; text-decoration: none; } a:focus, input:focus, select:focus, textarea:focus { outline: 1px solid -webkit-focus-ring-color; outline-offset: -1px; } hr { border: 0; height: 2px; border-bottom: 2px solid; } h1 { padding-bottom: 0.3em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; } h1, h2, h3 { font-weight: normal; } h1 code, h2 code, h3 code, h4 code, h5 code, h6 code { font-size: inherit; line-height: auto; } a:hover { color: #4080D0; text-decoration: underline; } table { border-collapse: collapse; } table > thead > tr > th { text-align: left; border-bottom: 1px solid; } table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table > tbody > tr > td { padding: 5px 10px; } table > tbody > tr + tr > td { border-top: 1px solid; } blockquote { margin: 0 7px 0 5px; padding: 0 16px 0 10px; border-left: 5px solid; } code { font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback"; font-size: 14px; line-height: 19px; } body.wordWrap pre { white-space: pre-wrap; } .mac code { font-size: 12px; line-height: 18px; } code > div { padding: 16px; border-radius: 3px; overflow: auto; } /** Theming */ .vscode-light { color: rgb(30, 30, 30); } .vscode-dark { color: #DDD; } .vscode-high-contrast { color: white; } .vscode-light code { color: #A31515; } .vscode-dark code { color: #D7BA7D; } .vscode-light code > div { background-color: rgba(220, 220, 220, 0.4); } .vscode-dark code > div { background-color: rgba(10, 10, 10, 0.4); } .vscode-high-contrast code > div { background-color: rgb(0, 0, 0); } .vscode-high-contrast h1 { border-color: rgb(0, 0, 0); } .vscode-light table > thead > tr > th { border-color: rgba(0, 0, 0, 0.69); } .vscode-dark table > thead > tr > th { border-color: rgba(255, 255, 255, 0.69); } .vscode-light h1, .vscode-light hr, .vscode-light table > tbody > tr + tr > td { border-color: rgba(0, 0, 0, 0.18); } .vscode-dark h1, .vscode-dark hr, .vscode-dark table > tbody > tr + tr > td { border-color: rgba(255, 255, 255, 0.18); } .vscode-light blockquote, .vscode-dark blockquote { background: rgba(127, 127, 127, 0.1); border-color: rgba(0, 122, 204, 0.5); } .vscode-high-contrast blockquote { background: transparent; border-color: #fff; }
+</style>
+<style>
+/* Tomorrow Theme */ /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */ /* Original theme - https://github.com/chriskempson/tomorrow-theme */ /* Tomorrow Comment */ .hljs-comment, .hljs-quote { color: #8e908c; } /* Tomorrow Red */ .hljs-variable, .hljs-template-variable, .hljs-tag, .hljs-name, .hljs-selector-id, .hljs-selector-class, .hljs-regexp, .hljs-deletion { color: #c82829; } /* Tomorrow Orange */ .hljs-number, .hljs-built_in, .hljs-builtin-name, .hljs-literal, .hljs-type, .hljs-params, .hljs-meta, .hljs-link { color: #f5871f; } /* Tomorrow Yellow */ .hljs-attribute { color: #eab700; } /* Tomorrow Green */ .hljs-string, .hljs-symbol, .hljs-bullet, .hljs-addition { color: #718c00; } /* Tomorrow Blue */ .hljs-title, .hljs-section { color: #4271ae; } /* Tomorrow Purple */ .hljs-keyword, .hljs-selector-tag { color: #8959a8; } .hljs { display: block; overflow-x: auto; color: #4d4d4c; padding: 0.5em; } .hljs-emphasis { font-style: italic; } .hljs-strong { font-weight: bold; }
+</style>
+<style>
+ul.contains-task-list { padding-left: 0; } ul ul.contains-task-list { padding-left: 40px; } .task-list-item { list-style-type: none; } .task-list-item-checkbox { vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+    </head>
+    <body>
+        <p><img src="file:///e%3A/myCode/Front-end-entry/day1/img/bVbijG4" alt="图片描述"></p>
+<h2 id="%E5%86%99%E7%BB%99%E8%B0%81">写给谁</h2>
+<p>这篇文章写给想要入门前端或者刚入门前端的小白~
+如果是已经工作好几年的小伙伴们可以直接跳过这一系列文章啦。</p>
+<h2 id="%E4%B8%BA%E5%95%A5%E5%86%99%E8%BF%99%E7%AF%87%E6%96%87%E7%AB%A0">为啥写这篇文章</h2>
+<p>终于决定给自己挖这个坑了，之前一直没打算写这样的系列文章。回想起自己的前端历程，走了不少弯路，希望这个系列的文章可以帮小白们少走弯路，快速入门。</p>
+<h2 id="%E4%B8%8D%E5%90%8C%E7%9A%84%E5%9C%B0%E6%96%B9">不同的地方</h2>
+<ul>
+<li>不会一天一更，因为白天要上班，晚上回去还要忙着准备一些其他的事情，会尽量做到两到三天一更，大家见谅啦~</li>
+<li>不会有很多很复杂的概念，我会用自己的语言表达出来，尽量精简，容易理解。</li>
+<li>会结合自己实际开发中用到的一切，讲自己踩过的坑，要注意的点，尽量做到把我会的都教给大家。</li>
+<li>不讲太旧的东西，像IE6兼容的问题之类的，需求已经很少很少了。</li>
+<li>会推荐合适的书，合适的网站给大家学习</li>
+</ul>
+<h2 id="%E5%BC%80%E5%A7%8B%E5%92%AF">开始咯</h2>
+<h3 id="%E4%BB%80%E4%B9%88%E6%98%AF%E5%89%8D%E7%AB%AF%EF%BC%8C%E5%89%8D%E7%AB%AF%E8%A6%81%E5%81%9A%E4%BB%80%E4%B9%88">什么是前端，前端要做什么</h3>
+<p>嘿嘿嘿，简单来说，你正在浏览的这个网页，上面的按钮，文字，图片之类的，都是前端工程师展现给你看的。这样的页面又叫H5页面，通常来说，前端负责页面的展示和页面逻辑，后端负责提供数据，比如数据库的增删改查等等。</p>
+<h3 id="%E5%89%8D%E7%AB%AF%E8%A6%81%E5%AD%A6%E5%93%AA%E4%BA%9B%E4%B8%9C%E8%A5%BF">前端要学哪些东西</h3>
+<p>说实话，很多，目前实际开发中，一个前端要学以下东西（甚至更多）：</p>
+<ul>
+<li>基础： HTML + CSS + Javascript</li>
+<li>框架： Vue或者React或者Angular （一般学一个即可，建议可学Vue, 后面的文章也只会讲Vue）</li>
+<li>打包工具： webpack或者gulp或者grunt （主流是Webpack）</li>
+<li>npm: 包管理（会用就行，不必深究）</li>
+<li>git: 版本控制工具（多人协作开发时）</li>
+</ul>
+<p>是不是有点慌，哈哈哈不着急，一个一个来。</p>
+<p>事实上当你学会了<code>基础</code>，那么就可以进行网页开发了，而且也能在很短的时间内学会框架，而一旦掌握了基础和框架，那么正式开发中所需要的技能就基本上都具备了，<code>其他的东西都是一些工具。</code></p>
+<p>所以，<code>基础最重要。</code>今天就讲讲基础，该怎么学，有哪些好的学习资源以及要看哪些书。</p>
+<h3 id="%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C">准备工作</h3>
+<p>下载并安装<a href="https://code.visualstudio.com/">Vscode</a>，Vscode是一款超赞的IDE，所谓IDE就是用来写代码的工具，提供代码高亮补全之类的功能，反正就是前端开发必备啦！</p>
+<h3 id="%E5%85%B3%E4%BA%8Ehtml%EF%BC%8Cjavascript%EF%BC%8Ccss%E7%9A%84%E5%85%B3%E7%B3%BB">关于HTML，Javascript，CSS的关系</h3>
+<p>这三个代表三种不同的语言，也对应着三种不同的文件，分别以<code>.html, .js, .css</code>结尾。这三种文件组合起来就形成了我们所看到的网页。<code>相辅相成，负责不同的功能。</code>
+拿盖房子来类比：</p>
+<ul>
+<li>HTML就是搭建好的毛坯房，搭好了架子，样子丑丑的，里边也住不了人，因为里边啥也没有，电器啥的都没有。</li>
+<li>CSS就是搞装修，把网页整的漂漂亮亮的。</li>
+<li>Javascript就是控制房子里的逻辑，比如说打开门，打开空调，打开电视机等等等等。</li>
+</ul>
+<p>所以:</p>
+<ul>
+<li>HTML负责网页的基本架构，你想要在页面上有个按钮，就需要在HTML文件里写一个<code>&lt;button&gt;点我&lt;/button&gt;</code>标签</li>
+<li>css负责网页的美化，比如设置按钮的背景色，<code>background-color: red;</code></li>
+<li>Javascrip负责控制点击按钮发生的事情，比如点击时出现一个警告窗。</li>
+</ul>
+<h3 id="%E6%8A%8A%E4%B8%89%E7%A7%8D%E6%96%87%E4%BB%B6%E8%BF%9E%E6%8E%A5%E8%B5%B7%E6%9D%A5">把三种文件连接起来</h3>
+<ul>
+<li>新建一个文件夹，用vscode打开这个文件夹，然后在该文件夹下分别新建<code>day1.html, day1.css, day1.js</code>三个文件。</li>
+<li>在<code>day1.html</code>里输入一个感叹号<code>!</code>然后按下<code>tab</code>键（注意该感叹号是英文的感叹号，而不是中文的），会自动生成下面的HTML代码。</li>
+</ul>
+<pre><code><!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+</code></pre>
+<ul>
+<li>然后在<code>&lt;body&gt;&lt;/body&gt;</code>之间添加一个button标签<code>&lt;button class=&quot;my-button&quot;&gt;点我&lt;/button&gt;</code>,这样就可以显示出一个按钮。</li>
+<li>在title的下面添加<code>&lt;link rel=&quot;stylesheet&quot; href=&quot;./day1.css&quot;&gt;</code>,这样就引入了CSS文件。</li>
+<li>在<code>&lt;/body&gt;</code>的上面一行添加<code>&lt;script src=&quot;./day1.js&quot;&gt;&lt;/script&gt;</code>,这样就引入了Js文件。得到的最终代码如下：</li>
+</ul>
+<pre><code><!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="./day1.css">
+</head>
+<body>
+	<button class="my-button">点我</button>
+	<script src="./day1.js"></script>
+</body>
+</html>
+</code></pre>
+<p>这样我们便把这三种不同的文件连接起来了，虽然目前CSS和JS里什么都没有，后面再具体往里边加东西。现在你可以用浏览器打开<code>day1.html</code>看下样子了</p>
+<p><code>ps: script标签和link标签里的./代表当前目录下，如果想表示上一层目录则要用../</code></p>
+<h3 id="html">HTML</h3>
+<p>HTML入门真的花不了多少时间，要明白以下几点就好了。</p>
+<ul>
+<li>HTML是一门标签语言，即由一个个标签组成，通常是一对组成一个元素，比如<code>&lt;button&gt;点我&lt;/button&gt;</code>，注意后面的button前有个斜杠，代表是闭合。</li>
+<li>也有不需要闭合的标签，比如<code>&lt;link rel=&quot;stylesheet&quot; href=&quot;./day1.css&quot;&gt;</code></li>
+<li>标签是可以嵌套的，比如link标签就是嵌套在head标签里的。</li>
+<li>你如果想增加页面的内容，那就在<code>body</code>标签里新增标签，head里内嵌的标签是不会显示在页面上的，因此我们通常只需要在body标签里写东西。</li>
+</ul>
+<p>推荐入门网站:
+<a href="https://www.w3schools.com/html/default.asp">HTML-如果你英文还可以，能翻墙，点这里</a>
+<a href="http://www.runoob.com/html/html-tutorial.html">HTML-如果你喜欢看中文，点这里</a></p>
+<p>学习方法很简单，照着教程，一个一个敲，然后看效果,大概一天能看完。</p>
+<p>推荐书籍：
+不推荐，这么简单的东西看看文档就可以搞定了。</p>
+<h3 id="css">CSS</h3>
+<p>先在day1.css中写下以下代码:</p>
+<pre><code>.my-button {
+    background-color: #add8e6;
+}
+</code></pre>
+<p>然后在浏览器中打开<code>day1.html</code>，会发现我们按钮背景色变成了浅蓝色。解释一下：</p>
+<ul>
+<li>在HTML的button上添加的class叫<code>类</code>，类的名字叫<code>my-button</code></li>
+<li>css中的<code>.my-button</code>中的<code>“.”</code>表示类选择器，意思是选中类名为my-button的元素。</li>
+<li><code>#add8e6</code>是16进制表示颜色的方法，也可以使用rgb的表示法，还可以使用一些内置的颜色，比如red。</li>
+</ul>
+<p>推荐入门网站：
+<a href="https://www.w3schools.com/css/default.asp">CSS-英文教程</a>
+<a href="http://www.runoob.com/css/css-tutorial.html">CSS-中文教程</a></p>
+<p>一些需要着重注意的点：</p>
+<ul>
+<li>要搞懂盒子模型,即下面这张图：
+<img src="file:///e%3A/myCode/Front-end-entry/day1/img/bVbiiby" alt="clipboard.png"></li>
+<li>要搞懂选择器有很多种，但是最常用的是类选择器和id选择器，还有<code>nth-child</code>选择器很实用，你可以都了解一下。</li>
+<li>要搞懂display属性，尤其注意<code>inline</code>, <code>inline-block</code>, <code>block</code>之间的区别</li>
+<li>要搞懂定位的影响，即<code>position</code>属性，搞懂相对于谁定位。</li>
+<li>初期少用浮动（<code>float</code>），因为很多人用错地方，也不懂怎么清除浮动。</li>
+<li>教程里的的内容，可以先跳过一些，看完<code>CSS Tutorial</code>和<code>CSS Advanced</code>就可以了，节约时间，剩下的有空再看。另外弹性布局(flex)也可以先跳过，虽然非常非常好用！！！后面单独拿一章讲。</li>
+</ul>
+<p>在过教程看到相关内容时，要带着上面这些问题去看。</p>
+<h3 id="javascript">Javascript</h3>
+<p>打开<code>day1.js</code>,添加以下代码:</p>
+<pre><code>document.querySelector('.my-button').addEventListener('click', function () {
+  alert('Hello, World!!')
+})
+</code></pre>
+<p>解释一下：</p>
+<ul>
+<li><code>document.querySelector('.my-button')</code>表示找到HTML中，类名为my-button的元素</li>
+<li><code>addEventListener</code>表示给这个元素添加事件监听器，事件名为<code>click</code>，即点击事件。当这个元素被点击时，调用后面的匿名函数，弹出警示窗。</li>
+</ul>
+<p>相对于HTML，CSS来说，Javascript才更像一门真正的语言，就像C语言那样。
+对前端来说，核心中的核心是Javascript，因为它控制整个页面的逻辑，从而与用户进行交互。</p>
+<p>推荐网站：
+<a href="https://www.w3schools.com/js/js_arithmetic.asp">Javascript-英文教程</a>
+<a href="http://www.runoob.com/js/js-tutorial.html">Javascipt-中文教程</a></p>
+<p>推荐书籍：</p>
+<ol>
+<li><a href="https://book.douban.com/subject/6038371/">《JavaScript DOM编程艺术 （第2版）》</a> 这本书很薄，很容易读完，入门书最佳。</li>
+<li><a href="https://book.douban.com/subject/10546125/">《JavaScript高级程序设计（第3版）》</a> 传说中的红宝书，比较厚，耐心阅读。</li>
+</ol>
+<p><code>ps: 推荐新人《Javascript权威指南》这本书的人通通乱棍打死，这本书绝对绝对不适合作为入门书籍，以上两本书就足够入门到较合格的前端开发了</code></p>
+<p><code>ps: 请先跳过闭包！！难度较大，而且初级开发中用到的地方很少，需要的时候再去深入。适当的退步是为了更快的前进</code></p>
+<h3 id="%E6%9C%80%E5%90%8E">最后</h3>
+<p>安利一个在线编程学习网站，也是英文的，很适合入门。<a href="https://www.codecademy.com/catalog/language/javascript">Codecademy</a>
+总结下学习方法：</p>
+<ul>
+<li>
+<p>对于基础的东西，去我推荐的网站，一个一个看，一个一个敲，<code>不需要强记</code>，留个印象，后面会越用越熟练。</p>
+</li>
+<li>
+<p>不同的阶段看不同的书，入门前端只需要过完我推荐的网站，同时看推荐的两本书 ，就够了，越专注入门越快。</p>
+</li>
+<li>
+<p>进步最快的方式永远是跟着敲，不要满足于看了。</p>
+</li>
+<li>
+<p>遇到问题先谷歌，实在不懂了可以来提问，有时间会帮大家解答。</p>
+</li>
+</ul>
+
+    </body>
+    </html>
