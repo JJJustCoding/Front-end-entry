@@ -1,6 +1,6 @@
 # 前端入门——day1（简介及推荐书籍和网站）
 
-![图片描述][1]
+![html5-css-javascript-logos](https://user-images.githubusercontent.com/22407219/47126388-eacf3c00-d2ba-11e8-980a-7f44e8804c22.png)
 
 ## 写给谁
 这篇文章写给想要入门前端或者刚入门前端的小白~
@@ -126,7 +126,8 @@ HTML入门真的花不了多少时间，要明白以下几点就好了。
 
 一些需要着重注意的点：
 - 要搞懂盒子模型,即下面这张图：
-![clipboard.png](/img/bVbiiby)
+![default](https://user-images.githubusercontent.com/22407219/47126485-6204d000-d2bb-11e8-9b2f-1bb1ad6cf6b4.PNG)
+
 - 要搞懂选择器有很多种，但是最常用的是类选择器和id选择器，还有`nth-child`选择器很实用，你可以都了解一下。
 - 要搞懂display属性，尤其注意`inline`, `inline-block`, `block`之间的区别
 - 要搞懂定位的影响，即`position`属性，搞懂相对于谁定位。
@@ -173,7 +174,6 @@ document.querySelector('.my-button').addEventListener('click', function () {
 - 遇到问题先谷歌，实在不懂了可以来提问，有时间会帮大家解答。
 
 
-  [1]: /img/bVbijG4
   [2]: https://code.visualstudio.com/
   [3]: https://www.w3schools.com/html/default.asp
   [4]: http://www.runoob.com/html/html-tutorial.html
