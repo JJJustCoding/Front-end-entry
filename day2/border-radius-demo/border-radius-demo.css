@@ -1,0 +1,13 @@
+.block1 {
+  width: 200px;
+  height: 100px;
+  background-color: lightblue;
+  border-radius: 999px;
+}
+
+.block2 {
+  width: 200px;
+  height: 100px;
+  background-color: lightgray;
+  border-radius: 50%;
+}

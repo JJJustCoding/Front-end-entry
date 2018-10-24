@@ -1,0 +1,18 @@
+.block1 {
+  background-color: lightblue;
+  width: 100px;
+  height: 500px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+.block2 {
+  display: inline-block;
+  width: 300px;
+  background-color: lightgray;
+}
+.block3 {
+  background-color: red;
+}

@@ -1,0 +1,105 @@
+html, body {
+	margin: 0;
+}
+
+.header {
+	background-color: #f1f4fb;
+	padding: 30px 25px;
+}
+
+.header-container {
+	box-sizing: border-box;
+	margin: 0 auto;
+}
+
+.logo-container {
+	display: inline-block;
+	line-height: 43px;
+}
+
+.logo-container .logo {
+	margin-right: 10px;
+	vertical-align: middle;
+}
+
+.logo-container .bricks {
+	font-size: 18px;
+	line-height: 18px;
+	vertical-align: middle;
+}
+
+.logo-container .io {
+	color: #8198ae;
+	vertical-align: middle;
+}
+
+.right {
+	float: right;
+}
+
+.menus {
+	display: inline-block;
+	margin-right: 50px;
+	color: #1f4568;
+	font-size: 14px;
+}
+
+.menus .menu-item {
+	margin-right: 25px;
+	cursor: pointer;
+}
+
+.menu-item:hover {
+	color: #3a9fff;
+}
+
+.sign-in {
+	display: inline-block;
+	padding: 10px 25px;
+	color: #8198ae;
+	border: 1px solid #ededed;
+	background-color: white;
+	border-radius: 999px;
+	box-shadow: 0px 18px 13px -6px rgba(0, 0, 0, .2);
+	transition: all .4s;
+	cursor: pointer;
+}
+
+.sign-in:hover {
+	box-shadow: 0px 25px 18px -6px rgba(0, 0, 0,0.2);
+}
+
+.clearfix:after {
+	content: '.';
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+@media (max-width: 768px) {
+	.menus {
+		display: none;
+	}
+}
+
+@media (min-width: 768px) {
+	.header-container {
+		width: 750px;
+	}
+}
+
+@media (min-width: 992px) {
+	.header-container {
+		width: 970px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.header-container  {
+		width: 1170px;
+	}
+}
+
+
+
